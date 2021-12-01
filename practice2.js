@@ -13,15 +13,13 @@
 // end
 // p select_even_items(["a", "b", "c", "d", "e", "f"])
 
-function printEveryOtherItem(strings) {
+function printEveryOtherItem(array) {
   var index = 0;
   var result = [];
-  strings.forEach(function (string) {
-    if (index % 2 === 0) {
-      result.push(string);
-    }
-    index += 1;
-  });
+  while (index < array.length) {
+    result.push(array[index]);
+    index += 2;
+  }
   console.log(result);
 }
 
@@ -42,11 +40,13 @@ printEveryOtherItem(["a", "b", "c", "d", "e", "f"]);
 
 function maxNumber(array) {
   var currentMax = array[0];
-  array.forEach(function (number) {
-    if (number > currentMax) {
-      currentMax = number;
+  var index = 0;
+  while (index < array.length) {
+    if (array[index] > currentMax) {
+      currentMax = array[index];
     }
-  });
+    index += 1;
+  }
   console.log(currentMax);
 }
 
